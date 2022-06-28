@@ -1,3 +1,16 @@
+// import { getProducts } from "../data/products";
+
+/*
+export async function getStaticProps() {
+  const products = await getProducts();
+  return {
+    props: {
+      products,
+    },
+  };
+}
+*/
+
 export async function getServerSideProps() {
   const req = await fetch('http://127.0.0.1:3000/api/products');
   const { products } = await req.json();
@@ -8,6 +21,7 @@ export async function getServerSideProps() {
     },
   }
 }
+
 
 export default function Home(props) {
   return (
